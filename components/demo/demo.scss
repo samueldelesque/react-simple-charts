@@ -1,0 +1,124 @@
+.react-simple-charts-demo{
+    .toolbar{
+        padding: 20px 0;
+        text-align:right;
+        margin-bottom: 20px;
+        .tool{
+            text-align: center;
+            margin-left:20px;
+            color: #bbb;
+            position: relative;
+            &.time-frame-picker{
+                > span{
+                    padding-left: 20px;
+                    cursor: pointer;
+                    &:hover, &.active{
+                        color: #888;
+                    }
+                }
+            }
+            .datepicker-container{
+                position: absolute;
+                top: 35px;
+                right: 0;
+                background: #fff;
+                border: 1px solid #bbb;
+                border-radius: 3px;
+                .DateRangePicker__Month{
+                    margin: 4px;
+                }
+            }
+        }
+    }
+    .block{
+        background-color: white;
+        padding: 15px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #bebebe;
+        margin: 20px;
+        .react-chart.area{
+            margin: 0 -15px -15px -15px;
+        }
+    }
+    .small-blocks{
+        margin: 20px;
+        &:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+    .small-block{
+        width: 50%;
+        float: left;
+        &:nth-child(2n){
+            padding-left: 20px;
+        }
+        .inner{
+            border-style: solid;
+            border-color: #bebebe;
+            border-width: 1px;
+            background-color: white;
+            padding: 15px;
+        }
+    }
+    .totals{
+        margin: 15px -15px -15px -15px;
+        border-top: 1px solid #E5E5E5;
+        .metric{
+            display: inline-block;
+            width: 33.333333%;
+            position: relative;
+            padding: 20px 0;
+            text-align: center;
+            &:after{
+                content: '';
+                position: absolute;
+                right: -1px;
+                width: 1px;
+                background-color: #E5E5E5;
+                height: 100%;
+                top: 0;
+            }
+            &:nth-child(n+4){
+                &:before{
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: #E5E5E5;
+                    height: 1px;
+                    top: 0;
+                }
+            }
+            &:nth-child(3n){
+                &:after{
+                    display: none;
+                }
+            }
+            .label{
+                color: #408AE5;
+                font-size: 11px;
+                text-transform: uppercase;
+            }
+            .value{
+                font-size: 26px;
+            }
+        }
+    }
+    .pie-area{
+        text-align: center;
+        padding: 20px;
+        p{
+            margin-top: 20px;
+        }
+    }
+    .bar-metric{
+        margin-bottom: 15px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}

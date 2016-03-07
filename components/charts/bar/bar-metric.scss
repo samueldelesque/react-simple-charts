@@ -1,0 +1,38 @@
+.bar-metric{
+    &:after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .label{
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+    .bar-row{
+        .bar-container{
+            background-color: #ddd;
+            width: 70%;
+            height: 7px;
+            margin-top:4px;
+            float: left;
+            position: relative;
+            .bar-completed{
+                height: 7px;
+                position: absolute;
+                background-color: #408AE5;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 0%;
+                transition: all .5s;
+            }
+        }
+        .metric{
+            width: 26%;
+            font-size: 13px;
+            float: right;
+            color: #777;
+            text-align: right;
+        }
+    }
+}
