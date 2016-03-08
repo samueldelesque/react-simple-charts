@@ -12,8 +12,18 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-    publicPath: '/dist/'
+    filename: '[name]/[name].js',
+    publicPath: '/dist/',
+    library: true,
+    libraryTarget: 'commonjs2'
+    // libraryTarget: "var",
+    // library: "ReactSimpleCharts"
+  },
+  // target: "node",
+  externals: {
+    'react': 'commonjs react',
+    'react-dom': 'commonjs react-dom',
+    'moment': 'commonjs moment',
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),

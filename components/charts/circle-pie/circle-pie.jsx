@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 import Chart from '../chart/chart'
 
-export default class Pie extends Component{
+export default class CirclePie extends Component{
   static propTypes = {
     width: React.PropTypes.number,
     height: React.PropTypes.number,
