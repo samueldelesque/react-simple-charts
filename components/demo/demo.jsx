@@ -4,8 +4,8 @@ import moment from 'moment'
 import DatePickerRange from 'react-daterange-picker'
 
 import Area from 'components/charts/area/area'
-import Pie from 'components/charts/pie/pie'
-import BarMetric from 'components/charts/bar/bar'
+import CirclePie from 'components/charts/circle-pie/circle-pie'
+import BarMetric from 'components/charts/bar-metric/bar-metric'
 
 import DemoData from './demo-data'
 
@@ -151,7 +151,7 @@ export default class Demo extends React.Component {
           <div className="small-block">
             <div className="inner">
               <div className="pie-area">
-                <Pie percent={95}/>
+                <CirclePie percent={95}/>
                 <p>Cats gifs / All gifs</p>
               </div>
             </div>
@@ -159,7 +159,7 @@ export default class Demo extends React.Component {
           <div className="small-block">
             <div className="inner">
               <div className="pie-area">
-                <Pie percent={15}/>
+                <CirclePie percent={15}/>
                 <p>Awesomeness / Cats</p>
               </div>
             </div>

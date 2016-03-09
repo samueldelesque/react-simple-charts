@@ -1,30 +1,31 @@
 var path = require('path'),
     webpack = require('webpack'),
-    _ = require('lodash'),
-    directories = [path.resolve('./'), path.resolve('./js'), path.resolve('./components')],
-    entrypoints = require('./entrypoints.js')
+    directories = [path.resolve('./'), path.resolve('./js'), path.resolve('./components')]
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: _.zipObject(Object.keys(entrypoints), _.map(entrypoints, function(entrypoint){
-    return [
-      'eventsource-polyfill', // necessary for hot reloading with IE
-      'webpack-hot-middleware/client',
-      entrypoint
-    ]
-  })),
+  entry: 'components/demo/entrypoint.jsx',
   resolve: {
     root: directories,
     extensions: ['', '.js', '.es6 ', '.jsx'],
   },
   output: {
-    path: '/',
-    filename: '[name].bundle.js',
-    publicPath: '/dist/'
+    path: path.join(__dirname, 'demo'),
+    filename: 'demo.js',
+    publicPath: '/demo/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
+    })
   ],
   module: {
     loaders: [

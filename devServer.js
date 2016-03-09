@@ -1,28 +1,14 @@
 var path = require('path'),
     express = require('express'),
     webpack = require('webpack'),
-    webpackDevMiddleware = require('webpack-dev-middleware'),
-    webpackHotMiddleware = require('webpack-hot-middleware'),
-    config = require('./webpack.config.dev')
+    config = require('./webpack.config.demo')
 
 
 var app = express(),
     compiler = webpack(config)
 
-
-app.use(webpackDevMiddleware(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath,
-  stats: {colors: true}
-}))
-
-app.use(webpackHotMiddleware(compiler, {
-  log: console.log
-}))
-
-app.get('/dist/:file', function(req, res) {
-  console.log('Requesting build file', req.params.file)
-  res.sendFile(path.join(__dirname, 'dist', req.params.file))
+app.get('/demo.js', function(req, res) {
+  res.sendFile(path.join(__dirname, '/demo/demo.js'))
 })
 
 app.get('/style.css', function(req, res) {

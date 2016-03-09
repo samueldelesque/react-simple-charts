@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:demo": "webpack --config webpack.config.demo.js && node devServer.js",
     "build": "npm run build:webpack",
     "start": "node devServer.js",
     "lint": "eslint src",

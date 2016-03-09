@@ -16,10 +16,7 @@ module.exports = {
     publicPath: '/dist/',
     library: true,
     libraryTarget: 'commonjs2'
-    // libraryTarget: "var",
-    // library: "ReactSimpleCharts"
   },
-  // target: "node",
   externals: {
     'react': 'commonjs react',
     'react-dom': 'commonjs react-dom',
