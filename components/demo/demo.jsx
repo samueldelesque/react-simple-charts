@@ -133,16 +133,16 @@ export default class Demo extends React.Component {
         <div className="small-blocks">
           <div className="small-block">
             <div className="inner">
-              <BarMetric label="Dogs who like cats" percentage={90} metricName="Most dogs"/>
-              <BarMetric label="Cats who like dogs" percentage={2} metricName="Sorry dogs"/>
-              <BarMetric label="Cats who eat cables" value={9023} percentage={92.5} metricName="cats"/>
+              <BarMetric label="Dogs who like cats" percent={90} metricName="Most dogs"/>
+              <BarMetric label="Cats who like dogs" percent={2} metricName="Sorry dogs"/>
+              <BarMetric label="Cats who eat cables" value={9023} percent={92.5} metricName="cats"/>
             </div>
           </div>
           <div className="small-block">
             <div className="inner">
-              <BarMetric label="Cats enjoying water" value={542} percentage={11} metricName="cats"/>
-              <BarMetric label="Cats using an iPhone" value={142} percentage={1} metricName="cats"/>
-              <BarMetric label="Cats who eat fish" value={10823} percentage={99.5} metricName="cats"/>
+              <BarMetric label="Cats enjoying water" value={542} percent={11} metricName="cats"/>
+              <BarMetric label="Cats using an iPhone" value={142} percent={1} metricName="cats"/>
+              <BarMetric label="Cats who eat fish" value={10823} percent={99.5} metricName="cats"/>
             </div>
           </div>
         </div>

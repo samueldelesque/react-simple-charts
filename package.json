@@ -3,8 +3,8 @@
   "version": "0.0.10",
   "description": "",
   "scripts": {
-    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "build:demo": "webpack --config webpack.config.demo.js && node devServer.js",
+    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:demo": "webpack --config webpack.config.demo.js",
     "build": "npm run build:webpack",
     "start": "node devServer.js",
     "lint": "eslint src",
@@ -40,18 +40,16 @@
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
     "lodash": "^4.6.1",
+    "moment": "^2.12.0",
     "node-sass": "^3.4.2",
+    "react": "^0.14.7",
     "react-daterange-picker": "^1.0.0",
+    "react-dom": "^0.14.7",
     "rimraf": "^2.4.3",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"
-  },
-  "peerDependencies": {
-    "moment": "^2.10.6",
-    "react": "0.14.7",
-    "react-dom": "0.14.7"
   }
 }
