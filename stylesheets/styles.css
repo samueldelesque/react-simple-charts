@@ -906,12 +906,8 @@ nav ul a:hover {
 }
 
 footer {
-  width: 180px;
-  position: fixed;
-  left: 50%;
-  margin-left: -530px;
-  bottom: 20px;
-  text-align: right;
+    margin-top:20px;
+  text-align: center;
   line-height: 16px;
 }
 
