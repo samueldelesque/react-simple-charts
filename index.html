@@ -16,8 +16,130 @@
         <div id="react-root"></div>
         <script src="javascripts/demo.js"></script>
       </section>
+
+
+      <section>
+        <h3>Usage</h3>
+
+        <p>This library is split up in 3 npm components:</p>
+
+        <ul>
+        <li><code>npm install --save react-area-chart</code></li>
+        <li><code>npm install --save react-circle-pie</code></li>
+        <li><code>npm install --save react-bar-metric</code></li>
+        </ul>
+
+        <h1>Area</h1>
+
+        <p>A pure React/SVG charting library.</p>
+
+        <h3>Input data</h3>
+
+        <p>Data input is specified as follow: <code>[{time: Unix MS timestamp, value: yValue, label: Text shown for this value}]</code></p>
+
+        <h3>Default Props</h3>
+
+        <pre><code>{
+            width: 640,
+            height: 320,
+            border: 'none',
+            strokeWidth: 2,
+            useDynamicYMin: false,
+            strokeColor: '#408AE5',
+            pointsRadius: 5,
+            tipsWidth: 240,
+            tipsHeight: 22,
+            tipsPadding: 10,
+            tipStrokeWidth: 1,
+            tipStrokeColor: '#BBBBBB',
+            tipsFill: 'white',
+            gridColor: 'rgba(230,230,230,.5)',
+            labelFontSize: 12,
+            labelTextShadow: '1px 1px #fff',
+            labelColor: '#555',
+            fillColor: 'rgba(191, 216, 246, 0.3)',
+            maxOverflow: 20,
+            yLabelsOutside: false,
+            yLabelsPosition: 'left',
+            yPadding: 10,
+            data: [],
+        }
+        </code></pre>
+
+        <h3>Sample use:</h3>
+
+        <pre><code>import Area from 'react-area-chart'
+
+        let data = [
+            {time:1422766800000, value: 0, label: "active users"},
+            {time:1422853200000, value: 10, label: "active users"},
+            {time:1422939600000, value: 5, label: "active users"}
+        ];
+        &lt;Area width={900} height={300} data={data}/&gt;
+        </code></pre>
+
+        <h1>Bar Metric</h1>
+
+        <p>A micro bar metric component.</p>
+
+        <h3>Default Props</h3>
+
+        <pre><code>{
+            metricName: 'points',
+            value: 0,
+            percent: 100,
+            label: 'N/A'
+        }
+        </code></pre>
+
+        <h3>Sample use:</h3>
+
+        <pre><code>import BarMetric from 'react-bar-metric'
+
+        &lt;BarMetric label="Share of IE" percent={5} metricName="Nearing Zero"/&gt;
+        </code></pre>
+
+        <h1>Circle Pie</h1>
+
+        <p>A micro component for rendering a percentage value as an SVG circle.</p>
+
+        <h3>Default Props</h3>
+
+        <pre><code>{
+            width: 150,
+            height: 150,
+            border: 'none',
+            strokeWidth: 10,
+            labelColor: '#111111',
+            labelFontSize: '18px',
+            strokeColor: '#408AE5',
+            railColor: '#f5f5f5',
+            fillColor: 'none',
+            percent: 70,
+            padding: 0,
+        }
+        </code></pre>
+
+        <h3>Sample use:</h3>
+
+        <pre><code>import CirclePie from 'react-circle-pie'
+
+        &lt;CirclePie percent={5}/&gt;
+        </code></pre>
+
+        <h3>Dependencies</h3>
+
+        <p>The following libraries are peer dependencies and are expected to be included in your own package:</p>
+
+        <ul>
+          <li>Moment.js &gt;= 2.0.0</li>
+          <li>React &gt;= 0.14.0</li>
+          <li>ReactDom &gt;= 0.14.0</li>
+        </ul>
+      </section>
+
       <footer>
-        <p>Project maintained by <a href="http://samueldelesque.me">samueldelesque</a></p>
+        <p>Made with love at <a href="http://dailymotion.com">Dailymotion</a> in NYC. Designed by <a href="http://leuryhidalgo.com/">Leury Hidalgo</a> and created by <a href="http://samueldelesque.me">Samuel Delesque</a>.</p>
       </footer>
     </div>
     <script type="text/javascript">

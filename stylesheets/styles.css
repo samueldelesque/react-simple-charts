@@ -671,28 +671,6 @@ pre code {
   padding: 0px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th {
-  text-align: left;
-  padding: 5px 10px;
-  border-bottom: 1px solid #e5e5e5;
-  color: #444;
-}
-
-td {
-  text-align: left;
-  padding: 5px 10px;
-  border-bottom: 1px solid #e5e5e5;
-  border-right: 1px solid #ffcc00;
-}
-td:first-child {
-  border-left: 1px solid #ffcc00;
-}
-
 hr {
   border: 0;
   outline: none;
@@ -707,22 +685,10 @@ dt {
 }
 
 header {
-  padding: 25px 20px 40px 20px;
-  margin: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  padding: 25px;
   text-align: center;
   background: url(../images/background.png) #4276b6;
-  -moz-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
-  -o-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
-  box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
-  z-index: 99;
   -webkit-font-smoothing: antialiased;
-  min-height: 76px;
 }
 header h1 {
   font: 40px/48px "Copse", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -736,121 +702,15 @@ header h1 {
   -ms-text-overflow: ellipsis;
 }
 header p {
-  color: #d8d8d8;
+  color: #eee;
   text-shadow: rgba(0, 0, 0, 0.2) 0 1px 0;
   font-size: 18px;
-  margin: 0px;
-}
-
-#banner {
-  z-index: 100;
-  left: 0;
-  right: 50%;
-  height: 50px;
-  margin-right: -382px;
-  position: fixed;
-  top: 115px;
-  background: #ffcc00;
-  border: 1px solid #f0b500;
-  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
-  -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
-  -moz-border-radius: 0px 2px 2px 0px;
-  -webkit-border-radius: 0px 2px 2px 0px;
-  -o-border-radius: 0px 2px 2px 0px;
-  -ms-border-radius: 0px 2px 2px 0px;
-  -khtml-border-radius: 0px 2px 2px 0px;
-  border-radius: 0px 2px 2px 0px;
-  padding-right: 10px;
-}
-#banner .button {
-  border: 1px solid #dba500;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffe788), color-stop(100%, #ffce38));
-  background: -webkit-linear-gradient(#ffe788, #ffce38);
-  background: -moz-linear-gradient(#ffe788, #ffce38);
-  background: -o-linear-gradient(#ffe788, #ffce38);
-  background: -ms-linear-gradient(#ffe788, #ffce38);
-  background: linear-gradient(#ffe788, #ffce38);
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -o-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -khtml-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1);
-  background-color: #FFE788;
-  margin-left: 5px;
-  padding: 10px 12px;
-  margin-top: 6px;
-  line-height: 14px;
-  font-size: 14px;
-  color: #333;
-  font-weight: bold;
-  display: inline-block;
-  text-align: center;
-}
-#banner .button:hover {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffe788), color-stop(100%, #ffe788));
-  background: -webkit-linear-gradient(#ffe788, #ffe788);
-  background: -moz-linear-gradient(#ffe788, #ffe788);
-  background: -o-linear-gradient(#ffe788, #ffe788);
-  background: -ms-linear-gradient(#ffe788, #ffe788);
-  background: linear-gradient(#ffe788, #ffe788);
-  background-color: #ffeca0;
-}
-#banner .fork {
-  position: fixed;
-  left: 50%;
-  margin-left: -325px;
-  padding: 10px 12px;
-  margin-top: 6px;
-  line-height: 14px;
-  font-size: 14px;
-  background-color: #FFE788;
-}
-#banner .downloads {
-  float: right;
-  margin: 0 45px 0 0;
-}
-#banner .downloads span {
-  float: left;
-  line-height: 52px;
-  font-size: 90%;
-  color: #9d7f0d;
-  text-transform: uppercase;
-  text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
-}
-#banner ul {
-  list-style: none;
-  height: 40px;
-  padding: 0;
-  float: left;
-  margin-left: 10px;
-}
-#banner ul li {
-  display: inline;
-}
-#banner ul li a.button {
-  background-color: #FFE788;
-}
-#banner #logo {
-  position: absolute;
-  height: 36px;
-  width: 36px;
-  right: 7px;
-  top: 7px;
-  display: block;
-  background: url(../images/octocat-logo.png);
+  margin: 10px 0 10px 0;
 }
 
 section {
-  padding: 30px 30px 50px 30px;
+  padding: 20px;
   margin: 20px 0;
-  margin-top: 190px;
   position: relative;
   background: #fbfbfb;
   -moz-border-radius: 3px;
@@ -906,174 +766,7 @@ nav ul a:hover {
 }
 
 footer {
-    margin-top:20px;
+  margin-top:20px;
   text-align: center;
   line-height: 16px;
-}
-
-@media print, screen and (max-width: 1060px) {
-  div.wrapper {
-    width: auto;
-    margin: 0;
-  }
-
-  nav {
-    display: none;
-  }
-
-  header, section, footer {
-    float: none;
-  }
-  header h1, section h1, footer h1 {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    -ms-text-overflow: ellipsis;
-  }
-
-  #banner {
-    width: 100%;
-  }
-  #banner .downloads {
-    margin-right: 60px;
-  }
-  #banner #logo {
-    margin-right: 15px;
-  }
-
-  section {
-    border: 1px solid #e5e5e5;
-    border-width: 1px 0;
-    padding: 20px auto;
-    margin: 190px auto 20px;
-    max-width: 600px;
-  }
-
-  footer {
-    text-align: center;
-    margin: 20px auto;
-    position: relative;
-    left: auto;
-    bottom: auto;
-    width: auto;
-  }
-}
-@media print, screen and (max-width: 720px) {
-  body {
-    word-wrap: break-word;
-  }
-
-  header {
-    padding: 20px 20px;
-    margin: 0;
-  }
-  header h1 {
-    font-size: 32px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    -ms-text-overflow: ellipsis;
-  }
-  header p {
-    display: none;
-  }
-
-  #banner {
-    top: 80px;
-  }
-  #banner .fork {
-    float: left;
-    display: inline-block;
-    margin-left: 0px;
-    position: fixed;
-    left: 20px;
-  }
-
-  section {
-    margin-top: 130px;
-    margin-bottom: 0px;
-    width: auto;
-  }
-
-  header ul, header p.view {
-    position: static;
-  }
-}
-@media print, screen and (max-width: 480px) {
-  header {
-    position: relative;
-    padding: 5px 0px;
-    min-height: 0px;
-  }
-  header h1 {
-    font-size: 24px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    -ms-text-overflow: ellipsis;
-  }
-
-  section {
-    margin-top: 5px;
-  }
-
-  #banner {
-    display: none;
-  }
-
-  header ul {
-    display: none;
-  }
-}
-@media print {
-  body {
-    padding: 0.4in;
-    font-size: 12pt;
-    color: #444;
-  }
-}
-@media print, screen and (max-height: 680px) {
-  footer {
-    text-align: center;
-    margin: 20px auto;
-    position: relative;
-    left: auto;
-    bottom: auto;
-    width: auto;
-  }
-}
-@media print, screen and (max-height: 480px) {
-  nav {
-    display: none;
-  }
-
-  footer {
-    text-align: center;
-    margin: 20px auto;
-    position: relative;
-    left: auto;
-    bottom: auto;
-    width: auto;
-  }
-}
-
-
-
-
-
-
-#react-root{
-    max-width: 900px;
-    margin: 0 auto;
-}
-header{
-    max-width: 900px;
-    margin: 0 auto;
-}
-header h1{
-    background: #408AE5;
-    text-align: center;
 }
