@@ -1,21 +1,7 @@
-# React Simple Charts
-
-A collection of React Components usefull for creating dashboards or other type of number formatting. Currently there are 3 components: Area, BarMetric, and CirclePie.
-
-![demo](https://www.dropbox.com/s/d3qmkqi70kd049u/Screenshot%202016-03-08%2018.47.20.png?dl=0)
-
-### Usage
-
-This library is split up in 3 components.
-
-- `npm install --save react-area-chart`
-- `npm install --save react-circle-pie`
-- `npm install --save react-bar-metric`
-
-
-# Area
+# React Area Chart
 
 A pure React/SVG charting library.
+
 
 ### Input data
 
@@ -64,62 +50,9 @@ let data = [
 <Area width={900} height={300} data={data}/>
 ```
 
+### Version
 
-# Bar Metric
-
-A micro bar metric component.
-
-### Default Props
-
-```
-{
-    metricName: 'points',
-    value: 0,
-    percent: 100,
-    label: 'N/A'
-}
-```
-
-### Sample use:
-
-```
-import BarMetric from 'react-bar-metric'
-
-<BarMetric label="Share of IE" percent={5} metricName="Nearing Zero"/>
-```
-
-
-# Circle Pie
-
-A micro component for rendering a percentage value as an SVG circle.
-
-
-### Default Props
-
-```
-{
-    width: 150,
-    height: 150,
-    border: 'none',
-    strokeWidth: 10,
-    labelColor: '#111111',
-    labelFontSize: '18px',
-    strokeColor: '#408AE5',
-    railColor: '#f5f5f5',
-    fillColor: 'none',
-    percent: 70,
-    padding: 0,
-}
-```
-
-### Sample use:
-
-```
-import CirclePie from 'react-circle-pie'
-
-<CirclePie percent={5}/>
-```
-
+0.0.7
 
 ### Dependencies
 
