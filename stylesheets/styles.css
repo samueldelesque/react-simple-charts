@@ -621,7 +621,7 @@ strong {
 }
 
 .wrapper {
-  width: 650px;
+  width: 900px;
   margin: 0 auto;
   position: relative;
 }
@@ -848,7 +848,6 @@ header p {
 }
 
 section {
-  width: 590px;
   padding: 30px 30px 50px 30px;
   margin: 20px 0;
   margin-top: 190px;
