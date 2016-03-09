@@ -2,7 +2,7 @@
 
 A collection of React Components usefull for creating dashboards or other type of number formatting. Currently there are 3 components: Area, BarMetric, and CirclePie.
 
-![demo](https://www.dropbox.com/s/d3qmkqi70kd049u/Screenshot%202016-03-08%2018.47.20.png?dl=0)
+![demo](http://samueldelesque.github.io/react-simple-charts/images/demo.png)
 
 ### Usage
 
