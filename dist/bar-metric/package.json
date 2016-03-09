@@ -1,0 +1,22 @@
+{
+  "name": "react-bar-metric",
+  "version": "0.0.3",
+  "description": "",
+  "main": "bar-metric.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samueldelesque/react-simple-charts.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "react-chart",
+    "react-graph",
+    "react-simple-charts",
+    "charting"
+  ],
+  "peerDependencies": {
+    "react": ">=0.14.0",
+    "react-dom": ">=0.14.0"
+  }
+}
