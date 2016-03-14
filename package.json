@@ -1,6 +1,6 @@
 {
   "name": "react-simple-charts",
-  "version": "0.0.10",
+  "version": "0.0.13",
   "description": "",
   "scripts": {
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
@@ -10,7 +10,7 @@
     "lint": "eslint src",
     "prepublish": "npm run build"
   },
-  "main": "dist/react-simple-charts.js",
+  "main": "dist/react-simple-charts/react-simple-charts.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/samueldelesque/react-simple-charts.git"

@@ -6,11 +6,10 @@ A collection of React Components usefull for creating dashboards or other type o
 
 ### Usage
 
-This library is split up in 3 components.
 
-- `npm install --save react-area-chart`
-- `npm install --save react-circle-pie`
-- `npm install --save react-bar-metric`
+```npm install --save react-simple-charts```
+
+```import {Area, CirclePie, BarMetric} from 'react-simple-charts'```
 
 
 # Area

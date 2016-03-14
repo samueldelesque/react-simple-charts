@@ -145,6 +145,7 @@ export default class Area extends Component{
     }
 
     return data.map((point, index) => {
+        if(index === 0 || index === data.length - 1) return
         if(data[index+1]) followingTime = data[index+1].time
         else followingTime = point.time + intervalLength
 
@@ -213,8 +214,9 @@ export default class Area extends Component{
 
   renderPoints(data, xMin, yMin, xSpread, ySpread, xScale, yScale){
     let isZero = ySpread === 0 && yMin === 0
-    return data.map((point, index) =>
-      <circle
+    return data.map((point, index) =>{
+      if(index === 0 || index === data.length - 1) return
+      return <circle
         key={`point-${index}`}
         cx={(point.time - xMin) * xScale - this.props.strokeWidth / 2}
         cy={isZero ? yScale : (ySpread - (point.value - yMin)) * yScale}
@@ -223,7 +225,7 @@ export default class Area extends Component{
         onMouseLeave={this.hidePointTip.bind(this, {ref: `point_${index}_tooltip`})}
         style={{stroke: this.props.strokeColor, strokeWidth: this.props.strokeWidth, fill: 'white', cursor: 'default'}}
       />
-    )
+    })
   }
 
   renderLabel(label, index){
