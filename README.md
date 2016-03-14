@@ -1,5 +1,7 @@
 # React Simple Charts
 
+[![npm version](https://badge.fury.io/js/react-simple-charts.svg)](https://badge.fury.io/js/react-simple-charts)
+
 A collection of React Components usefull for creating dashboards or other type of number formatting. Currently there are 3 components: Area, BarMetric, and CirclePie.
 
 ![demo](http://samueldelesque.github.io/react-simple-charts/images/demo.png)
