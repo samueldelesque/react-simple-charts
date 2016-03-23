@@ -4,8 +4,7 @@ var path = require('path'),
     config = require('./webpack.config.demo')
 
 
-var app = express(),
-    compiler = webpack(config)
+var app = express()
 
 app.get('/demo.js', function(req, res) {
   res.sendFile(path.join(__dirname, '/demo/demo.js'))
