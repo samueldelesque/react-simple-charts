@@ -13,14 +13,14 @@ import Chart from '../chart/chart'
  *
  */
 
-function numberToString(value){
-  if(value > 1000000000) return Math.round(value/100000000)/10 + 'B'
-  if(value > 10000000) return Math.round(value/1000000) + 'M'
-  if(value > 1000000) return Math.round(value/100000)/10 + 'M'
-  if(value > 10000) return Math.round(value/1000) + 'K'
-  if(value > 1000) return Math.round(value/100)/10 + 'K'
-  if(value > 10) return Math.round(value)
-  return Math.round(value*10)/10
+const numberToString = function (value){
+ if(typeof value !== 'number') return value
+ if(value > 1000000000) return Math.round(value/100000000)/10 + 'B'
+ if(value > 10000000) return Math.round(value/1000000) + 'M'
+ if(value > 1000000) return Math.round(value/100000)/10 + 'M'
+ if(value > 10000) return Math.round(value/1000) + 'K'
+ if(value > 1000) return Math.round(value/100)/10 + 'K'
+ return Math.round(value*100)/100
 }
 
 export default class Area extends Component{
@@ -121,7 +121,7 @@ export default class Area extends Component{
         dateFormat,
         tipText,
         followingTime,
-        label = 'views',
+        label = '{{value}} views',
         day = 86400000,
         isZero = ySpread === 0 && yMin === 0
 
@@ -204,7 +204,7 @@ export default class Area extends Component{
               x={xBase - this.props.tipsWidth / 2 + 2}
               y={yBase - this.props.strokeWidth - tipHeight - tipOffset + this.props.tipsPadding + 30}
               style={{fontSize: 16, fontWeight: 'bold'}}
-              dangerouslySetInnerHTML={{__html: numberToString(point.value) + ' ' + label}}
+              dangerouslySetInnerHTML={{__html: this.renderTipText(label, label, {value: point.value})}}
             />
           </g>
         )

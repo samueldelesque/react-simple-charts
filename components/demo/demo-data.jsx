@@ -58,7 +58,7 @@ function genGraphData(startDate, endDate, intervalLength=86400){
   let views = [], value = 3000, steps = range / 7, growth = [1,-1,1,-2,2,3,5], startTime = parseInt(moment(startDate).format('X'))
   for(let i = 0;i<range;i++){
     let val = Math.abs(value + (1000 * growth[Math.floor(i/steps)]) + Math.round(Math.random() * 3000))
-    views.push({time: startTime + i * intervalLength, value: val, label: 'cats online'})
+    views.push({time: startTime + i * intervalLength, value: val, label: '{{value}} cats online'})
   }
   return views
 }
