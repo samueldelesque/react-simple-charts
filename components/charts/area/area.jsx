@@ -108,11 +108,11 @@ export default class Area extends Component{
     this.refs[point.ref].style.display = 'none'
   }
 
-  renderTipText(text, format, data){
+  renderTipText(text, data){
     return text
-      .replace('{{date}}', moment(data.date).format(format))
-      .replace('{{date1}}', moment(data.date1).format(format))
-      .replace('{{date2}}', moment(data.date2).format(format))
+      .replace('{{date}}', moment(data.date).format(data.dateFormat || 'YYYY-MM-DD'))
+      .replace('{{date1}}', moment(data.date1).format(data.dateFormat || 'YYYY-MM-DD'))
+      .replace('{{date2}}', moment(data.date2).format(data.dateFormat || 'YYYY-MM-DD'))
       .replace('{{value}}', numberToString(data.value))
   }
 
@@ -129,7 +129,7 @@ export default class Area extends Component{
     else if(data.length === 1) intervalLength = 0
     else intervalLength = data[1].time - data[0].time
 
-    if(data[0].label) label = data[0].label
+    // if(data[0].label) label = data[0].label
 
     if(intervalLength > day * 27 && intervalLength < day * 32){ //roughly one month
       dateFormat = 'MMMM'
@@ -147,6 +147,7 @@ export default class Area extends Component{
     return data.map((point, index) => {
         if(index === 0 || index === data.length - 1) return
         if(data[index+1]) followingTime = data[index+1].time
+        if(!point.label) point.label = point.label
         else followingTime = point.time + intervalLength
 
         let xBase = (point.time - xMin) * xScale,
@@ -197,14 +198,14 @@ export default class Area extends Component{
               x={xBase - this.props.tipsWidth / 2 + 2}
               y={yBase - this.props.strokeWidth - tipHeight - tipOffset + this.props.tipsPadding + 10}
               style={{fontSize: 14, fontWeight: 'light'}}
-              dangerouslySetInnerHTML={{__html: this.renderTipText(tipText, pointTimeFormat, {date: point.time, date1: point.time, date2: followingTime, value: point.value})}}
+              dangerouslySetInnerHTML={{__html: this.renderTipText(tipText, {dateFormat: pointTimeFormat, date: point.time, date1: point.time, date2: followingTime, value: point.value})}}
             />
             <text
               className="tip-text-value"
               x={xBase - this.props.tipsWidth / 2 + 2}
               y={yBase - this.props.strokeWidth - tipHeight - tipOffset + this.props.tipsPadding + 30}
               style={{fontSize: 16, fontWeight: 'bold'}}
-              dangerouslySetInnerHTML={{__html: this.renderTipText(label, label, {value: point.value})}}
+              dangerouslySetInnerHTML={{__html: this.renderTipText(point value: point.value})}}
             />
           </g>
         )
