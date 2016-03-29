@@ -205,7 +205,7 @@ export default class Area extends Component{
               x={xBase - this.props.tipsWidth / 2 + 2}
               y={yBase - this.props.strokeWidth - tipHeight - tipOffset + this.props.tipsPadding + 30}
               style={{fontSize: 16, fontWeight: 'bold'}}
-              dangerouslySetInnerHTML={{__html: this.renderTipText(point value: point.value})}}
+              dangerouslySetInnerHTML={{__html: this.renderTipText(point.label, {value: point.value})}}
             />
           </g>
         )
