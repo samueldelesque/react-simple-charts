@@ -5,13 +5,13 @@ export default class demoData {
 
   constructor(settings){
     this.settings = Object.assign({
-      startDate: moment(),
-      endDate: moment(),
+      startDate: Date.now(),
+      endDate: Date.now(),
       maxPoints: 31
     }, settings)
 
-    this.settings.startDate = moment(this.settings.startDate)
-    this.settings.endDate = moment(this.settings.endDate)
+    this.settings.startDate = moment(parseInt(this.settings.startDate))
+    this.settings.endDate = moment(parseInt(this.settings.endDate))
   }
 
   cleanGraphData(data = []){
@@ -20,7 +20,7 @@ export default class demoData {
     data.forEach((point, i)=>{if(!point.time)data[i].time = point.id || 0;results.push(point)})
 
     // Convert unix time to ms unix time
-    results.forEach((point, i)=>{if(results[i].format !== 'x'){results[i].time = parseFloat(point.time) * 1000;results[i].format = 'x'}})
+    // results.forEach((point, i)=>{if(results[i].format !== 'x'){results[i].time = parseFloat(point.time) * 1000;results[i].format = 'x'}})
 
     // Remove data which is out of range
     let s = parseFloat(this.settings.startDate.format('x')),
@@ -53,9 +53,9 @@ export default class demoData {
 }
 
 // FIXTURES
-function genGraphData(startDate, endDate, intervalLength=86400){
+function genGraphData(startDate, endDate, intervalLength=86400000){
   let range = Math.abs(moment(startDate).diff(moment(endDate), 'days'))
-  let views = [], value = 3000, steps = range / 7, growth = [1,-1,1,-2,2,3,5], startTime = parseInt(moment(startDate).format('X'))
+  let views = [], value = 3000, steps = range / 7, growth = [1,-1,1,-2,2,3,5], startTime = parseInt(moment(startDate).format('x'))
   for(let i = 0;i<range;i++){
     let val = Math.abs(value + (1000 * growth[Math.floor(i/steps)]) + Math.round(Math.random() * 3000))
     views.push({time: startTime + i * intervalLength, value: val, label: '{{value}} cats online'})

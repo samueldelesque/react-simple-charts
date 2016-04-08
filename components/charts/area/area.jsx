@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import moment from 'moment'
-
 import Chart from '../chart/chart'
 
 /*
  *   - x axis is always time.
  *   - data is given as [{time: TIMESTAMP, value: VALUE, label: LABEL}]
+ *   - TIMESTAMP is in UNIX_MS
  *   - @TODO:
           • multiple lines as [[{time: TIMESTAMP, value: VALUE}, ...], [{time: TIMESTAMP, value: VALUE}, ...] ...])
  *
@@ -147,8 +147,8 @@ export default class Area extends Component{
     return data.map((point, index) => {
         if(index === 0 || index === data.length - 1) return
         if(data[index+1]) followingTime = data[index+1].time
-        if(!point.label) point.label = point.label
         else followingTime = point.time + intervalLength
+        if(!point.label) point.label = label
 
         let xBase = (point.time - xMin) * xScale,
             key = 'point_' + index + '_tooltip',
@@ -338,11 +338,12 @@ export default class Area extends Component{
     this.activeWidth = this.props.width
     this.activeHeight = this.props.height - 50 // add 50 px in the bottom for the labels
 
-    // Let's ensure all data has a timeStamp, and set it in ms if time is in seconds
+    // Let's ensure all data has a timeStamp
     data.forEach((point,index)=>{
       if(!point.time){
         data[index].time = index
       }
+      data[index].time = parseFloat(data[index].time)
     })
 
     // let xMax = this.props.data.length - 1

@@ -40,8 +40,8 @@ export default class Demo extends React.Component {
 
   updateInput(){
     let settings = {
-      startDate: this.state.startDate.format(),
-      endDate: this.state.endDate.format(),
+      startDate: this.state.startDate.format('x'),
+      endDate: this.state.endDate.format('x'),
       maxPoints: this.state.maxPoints
     }
     let data = new DemoData(settings)
