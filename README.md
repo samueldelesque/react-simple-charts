@@ -59,9 +59,9 @@ Data input is specified as follow: `[{time: Unix MS timestamp, value: yValue, la
 import Area from 'react-area-chart'
 
 let data = [
-    {time:1422766800000, value: 0, label: "active users"},
-    {time:1422853200000, value: 10, label: "active users"},
-    {time:1422939600000, value: 5, label: "active users"}
+    {time:1422766800000, value: 0, label: "{{value}} active users"},
+    {time:1422853200000, value: 10, label: "{{value}} active users"},
+    {time:1422939600000, value: 5, label: "{{value}} active users"}
 ];
 <Area width={900} height={300} data={data}/>
 ```
