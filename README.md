@@ -56,7 +56,6 @@ Data input is specified as follow: `[{time: Unix MS timestamp, value: yValue, la
 ### Sample use:
 
 ```
-import Area from 'react-area-chart'
 
 let data = [
     {time:1422766800000, value: 0, label: "{{value}} active users"},
@@ -78,6 +77,12 @@ A micro bar metric component.
     metricName: 'points',
     value: 0,
     percent: 100,
+    metricPadding: 15,
+    metricColor: '#777',
+    barWidth: 70,
+    barHeight: 7,
+    barRailColor: '#ddd',
+    barColor: '#408AE5',
     label: 'N/A'
 }
 ```
@@ -85,8 +90,6 @@ A micro bar metric component.
 ### Sample use:
 
 ```
-import BarMetric from 'react-bar-metric'
-
 <BarMetric label="Share of IE" percent={5} metricName="Nearing Zero"/>
 ```
 
@@ -117,8 +120,6 @@ A micro component for rendering a percentage value as an SVG circle.
 ### Sample use:
 
 ```
-import CirclePie from 'react-circle-pie'
-
 <CirclePie percent={5}/>
 ```
 
@@ -129,7 +130,6 @@ The following libraries are peer dependencies and are expected to be included in
 
 - Moment.js >= 2.0.0
 - React >= 0.14.0
-- ReactDom >= 0.14.0
 
 
 ### Credits
