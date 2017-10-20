@@ -3,7 +3,7 @@
 
 ###  DEPRECATION WARNING
 
-This component is now part of Salad-UI. Please [See docs](https://salad-ui.com/) for more information. (You can still install the charts as a standalone using `npm i --save salad-ui.charts`
+This component is now part of Salad-UI. Please [See docs](https://salad-ui.com/) for more information. (You can still install the charts as a standalone using `npm i --save salad-ui.chart`
 
 [![npm version](https://badge.fury.io/js/react-simple-charts.svg)](https://badge.fury.io/js/react-simple-charts)
 
