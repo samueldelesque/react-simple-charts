@@ -54,8 +54,10 @@ export default class CirclePie extends Component{
     let radius = this.props.width / 2 - this.props.strokeWidth / 2 - this.props.padding,
         center = radius + this.props.strokeWidth / 2 + this.props.padding,
         startAngle = 0,
-        endAngle = 3.6 * this.props.percent,
-        arc = this.describeArc(center, center, radius, startAngle, endAngle)
+        endAngle = 3.5999 * this.props.percent,
+        arc = this.describeArc(center, center, radius, startAngle, endAngle),
+		dx = this.props.percent >= 10 ? "-.85em" : "-.5em",
+		dx = this.props.percent >= 100 ? "-1.25em" : dx	
 
     return (
       <Chart width={this.props.width} height={this.props.height} border={this.props.border}>
@@ -74,7 +76,7 @@ export default class CirclePie extends Component{
         <text
           x={center}
           y={center}
-          dx="-.5em"
+          dx="{dx}
           dy=".4em"
           fill={this.props.labelColor}
           fontSize={this.props.labelFontSize}>
